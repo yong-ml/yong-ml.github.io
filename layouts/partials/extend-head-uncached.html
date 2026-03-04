@@ -1,23 +1,16 @@
-{{/* KaTeX 전역 로드 - $...$ 인라인 및 $$...$$ 블록 수식을 테이블 포함 전체 페이지에서 지원 */}}
-{{ $katexCSS := resources.Get "lib/katex/katex.min.css" }}
-{{ $katexCSS := $katexCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<link type="text/css" rel="stylesheet" href="{{ $katexCSS.RelPermalink }}" integrity="{{ $katexCSS.Data.Integrity }}">
-
-{{ $katexLib := resources.Get "lib/katex/katex.min.js" }}
-{{ $katexRenderLib := resources.Get "lib/katex/auto-render.min.js" }}
-{{ $katexJS := slice $katexLib $katexRenderLib | resources.Concat "js/katex.bundle.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<script defer type="text/javascript" src="{{ $katexJS.RelPermalink }}" integrity="{{ $katexJS.Data.Integrity }}"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ],
-      throwOnError: false
+{{/* KaTeX shortcode 사용 시 $...$ 딜리미터 추가 지원 */}}
+{{ if .Page.HasShortcode "katex" }}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false
+      });
     });
-  });
-</script>
+  </script>
+{{ end }}
