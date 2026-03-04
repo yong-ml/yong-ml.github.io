@@ -33,12 +33,14 @@ enableMathNotation = true
   showReadingTime = true
   showWordCount = true
   showEdit = false
+  showTaxonomies = true
   sharingLinks = []
 
 [list]
   showCards = true
   groupByYear = true
   cardView = true
+  showTaxonomies = true
 
 [sitemap]
   excludedKinds = []
