@@ -1,21 +1,24 @@
-colorScheme = "ocean"
-defaultAppearance = "dark"
+colorScheme = "congo"
+defaultAppearance = "light"
 autoSwitchAppearance = true
 
 enableSearch = true
 enableCodeCopy = true
 enableMathNotation = true
-
+defaultBackgroundImage = "img/background.svg"
+defaultFeaturedImage = "img/featured.jpg"
 [homepage]
-  layout = "profile"
+  layout = "hero"
   showRecent = true
-  showRecentItems = 6
+  showRecentItems = 5
   showMoreLink = true
   showMoreLinkDest = "/posts/"
-  cardView = true
+  cardView = false
+  homepageImage = "img/background.jpg"
+  disableHeroImageFilter = false
 
 [header]
-  layout = "fixed"
+  layout = "basic"
 
 [footer]
   showCopyright = true
@@ -28,19 +31,23 @@ enableMathNotation = true
   showViews = false
   showLikes = false
   showAuthor = true
+  showAuthorBottom = true
+  showHero = true
+  heroStyle = "background"
   showTableOfContents = true
+  showComments = true
   showSummary = true
-  showReadingTime = true
-  showWordCount = true
   showEdit = false
   showTaxonomies = true
+  showWordCount = false
   sharingLinks = []
 
 [list]
-  showCards = true
   groupByYear = true
   cardView = true
   showTaxonomies = true
+  showSummary = true
+  showWordCount = false
 
 [sitemap]
   excludedKinds = []

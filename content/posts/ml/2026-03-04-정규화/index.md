@@ -1,6 +1,7 @@
 ---
 title: 정규화
 description: Normalization, Standardization, Regularization의 차이에 대해
+summary: Normalization, Standardization, Regularization의 차이에 대해
 date: 2026-03-04T09:39:05.418Z
 preview: ""
 draft: false

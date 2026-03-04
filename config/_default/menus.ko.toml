@@ -4,6 +4,18 @@
   weight = 10
 
 [[main]]
+  name = "ML"
+  parent = "Posts"
+  pageRef = "posts/ml"
+  weight = 10
+
+[[main]]
+  name = "Python"
+  parent = "Posts"
+  pageRef = "posts/python"
+  weight = 20
+
+[[main]]
   name = "Tags"
   pageRef = "tags"
   weight = 20
