@@ -1,0 +1,13 @@
+baseURL = "https://yong-ml.github.io/"
+languageCode = "ko"
+defaultContentLanguage = "ko"
+theme = "blowfish"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"

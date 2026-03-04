@@ -1,4 +1,3 @@
 ---
-title: Posts
-bookCollapseSection: true
+title: "Posts"
 ---

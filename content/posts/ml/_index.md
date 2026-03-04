@@ -1,5 +1,3 @@
 ---
-title: "ML / DeepLarning"
-weight: 10
-bookCollapseSection : true
+title: "ML / Deep Learning"
 ---

@@ -1,0 +1,13 @@
+title = "Yong's Dev Blog"
+languageCode = "ko"
+languageName = "한국어"
+weight = 1
+
+[params.author]
+name = "Yong"
+headline = "ML을 공부하는 개발자"
+bio = "Python, ML, MLOps를 공부하며 배운 내용을 정리합니다."
+links = [
+  { github = "https://github.com/yong-ml" },
+  { email = "mailto:it.ml.yong@gmail.com" }
+]
