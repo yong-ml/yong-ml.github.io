@@ -1,0 +1,52 @@
+name: Deploy Hugo to GitHub Pages
+
+on:
+  push:
+    branches: [main]       # main 브랜치에 push할 때마다 실행
+  workflow_dispatch:        # GitHub 웹에서 수동 실행도 가능
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false  # 배포 중복 방지
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive   # PaperMod 테마 submodule 포함 필수
+          fetch-depth: 0          # 전체 git 히스토리 (lastmod 기능용)
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install Hugo Extended
+        run: |
+          wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.147.2/hugo_extended_0.147.2_linux-amd64.deb
+          sudo dpkg -i /tmp/hugo.deb
+
+      - name: Build
+        run: hugo --minify    # 파일 압축해서 빌드 (public/ 폴더 생성)
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public      # 빌드 결과물 업로드
+
+  deploy:
+    needs: build              # build 잡 완료 후 실행
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

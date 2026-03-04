@@ -1,0 +1,43 @@
+baseURL: "https://yong-ml.github.io/"
+title: "Yong's Dev Blog"
+theme: hugo-book
+languageCode: ko-kr
+
+enableGitInfo: true
+disablePathToLower: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true        # KaTeX/Mermaid shortcode 렌더링에 필요
+  tableOfContents:
+    startLevel: 1
+    endLevel: 3
+  highlight:
+    style: base16-snazzy
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+
+params:
+  BookTheme: auto           # 시스템 다크/라이트 자동 감지
+  BookToC: true             # 우측 목차 표시
+  BookSearch: true          # 검색 활성화
+  BookComments: false       # 댓글 (나중에 giscus 연동 시 true)
+  BookSection: posts        # /content/posts/ 를 사이드바 메뉴로 사용
+  BookRepo: "https://github.com/yong-ml/yong-ml.github.io"
+  BookDateFormat: "2006-01-02"
+  BookPortableLinks: warning
+
+menu:
+  after:
+    - name: GitHub
+      url: "https://github.com/yong-ml"
+      weight: 10
+    - name: Email
+      url: "mailto:it.ml.yong@gmail.com"
+      weight: 20
