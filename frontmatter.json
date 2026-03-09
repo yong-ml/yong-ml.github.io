@@ -21,7 +21,7 @@
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
-      "pageBundle": false,
+      "pageBundle": true,
       "fields": [
         {
           "title": "Title",
@@ -29,8 +29,8 @@
           "type": "string"
         },
         {
-          "title": "Description",
-          "name": "description",
+          "title": "summary",
+          "name": "summary",
           "type": "string"
         },
         {
@@ -56,13 +56,21 @@
           "type": "tags"
         },
         {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
           "title": "weight",
           "name": "weight",
+          "type": "number"
+        },
+        {
+          "title": "series",
+          "name": "series",
+          "type": "choice",
+          "choices": [
+            "나이브 베이즈"
+          ]
+        },
+        {
+          "title": "series_order",
+          "name": "series_order",
           "type": "number"
         }
       ]
